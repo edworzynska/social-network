@@ -1,6 +1,7 @@
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 
@@ -18,8 +19,8 @@ class AccountRepositoryTest {
     static Account account2;
     static Account account3;
 
-    @BeforeAll
-    static void setUp() {
+    @BeforeEach
+    void setUp() {
         hibernateUtil = new HibernateUtil();
         sessionFactory = hibernateUtil.startSession();
         accountRepository = new AccountRepository(sessionFactory);

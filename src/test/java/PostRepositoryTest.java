@@ -1,6 +1,7 @@
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 
@@ -20,8 +21,8 @@ class PostRepositoryTest {
     private static Account account2;
     private static Account account3;
 
-    @BeforeAll
-    static void setUp() {
+    @BeforeEach
+    void setUp() {
         hibernateUtil = new HibernateUtil();
         sessionFactory = hibernateUtil.startSession();
         postRepository = new PostRepository(sessionFactory);
