@@ -42,4 +42,11 @@ public class AccountRepository {
         session.getTransaction().commit();
         session.close();
     }
+    public void deleteAccount(Account account){
+        Session session = sessionFactory.openSession();
+        session.getTransaction().begin();
+        session.remove(account);
+        session.getTransaction().commit();
+        session.close();
+    }
 }

@@ -63,4 +63,11 @@ class AccountRepositoryTest {
         var result = accountRepository.all().size();
         assertEquals(4, result);
     }
+
+    @Test
+    void deletesAccount() {
+        accountRepository.deleteAccount(account1);
+        var result = accountRepository.all().size();
+        assertEquals(2, result);
+    }
 }

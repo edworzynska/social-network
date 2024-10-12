@@ -46,4 +46,11 @@ public class PostRepository {
         session.getTransaction().commit();
         session.close();
     }
+    public void deletePost(Post post){
+        Session session = sessionFactory.openSession();
+        session.getTransaction().begin();
+        session.remove(post);
+        session.getTransaction().commit();
+        session.close();
+    }
 }

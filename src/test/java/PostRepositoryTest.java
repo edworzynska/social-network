@@ -86,4 +86,11 @@ class PostRepositoryTest {
         var result = postRepository.all().size();
         assertEquals(4, result);
     }
+
+    @Test
+    void deletesPost() {
+        postRepository.deletePost(post1);
+        var result = postRepository.all().size();
+        assertEquals(2, result);
+    }
 }
